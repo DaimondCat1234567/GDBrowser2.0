@@ -1,7 +1,7 @@
 {
   "icon": {
     "form": "player",
-    "name": "Icon",
+    "name": "Cube that is definitely not in 2d",
     "index": 21
   },
   "ship": {
@@ -16,7 +16,7 @@
   },
   "ufo": {
     "form": "bird",
-    "name": "UFO",
+    "name": "Bird",
     "index": 24
   },
   "wave": {
@@ -43,7 +43,7 @@
   },
   "jetpack": {
     "form": "jetpack",
-    "name": "Jetpack",
+    "name": "The clone of ship for platformer",
     "index": -1
   }
 }
