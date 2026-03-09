@@ -1,8 +1,8 @@
 $('body').append(`
 	<div data-nosnippet id="tooSmall" class="brownbox center supercenter" style="display: none; width: 80%">
 	<h1>Yikes!</h1>
-	<p>Your <cg>screen</cg> isn't <ca>wide</ca> enough to <cy>display</cy> this <cg>page</cg>.<br>
-	Please <cy>rotate</cy> your <cg>device</cg> <ca>horizontally</ca> or <cy>resize</cy> your <cg>window</cg> to be <ca>longer</ca>.
+	<p>Your <cg>screen</cg> is too <ca>wide</ca> to <cy>display</cy> this <cg>page</cg>.<br>
+	Please <cy>rotate</cy> your <cg>device</cg> <ca>vertically</ca> or <cy>resize</cy> your <cg>window</cg> to be <ca>shorter</ca>.
 	</p>
 	<p style="font-size: 1.8vh">Did I color too many words? I think I colored too many words.</p>
 	</div>
