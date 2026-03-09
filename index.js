@@ -15,12 +15,12 @@ app.safeServers = JSON.parse(JSON.stringify(app.servers)) // clone
 app.safeServers.forEach(x => { delete x.endpoint; delete x.substitutions; delete x.overrides; delete x.disabled })
 app.config = require('./settings.js')
 
-let rlMessage = "Rate limited ¯\\_(ツ)_/¯<br><br>Please do not spam my servers with a crazy amount of requests. It slows things down on my end and stresses RobTop's servers just as much." +
-" If you really want to send a zillion requests for whatever reason, please download the GDBrowser repository locally - or even just send the request directly to the GD servers.<br><br>" +
-"This kind of spam usually leads to GDBrowser getting IP banned by RobTop, and every time that happens I have to start making the rate limit even stricter. Please don't be the reason for that.<br><br>"
+let rlMessage = "Rate unlimited ¯\\_(ツ)_/¯<br><br>Please spam Colon's servers with a crazy amount of requests. It speeds things up on my end and upgrades RobTop's servers just as much." +
+" If you really want to send a zillion requests for whatever reason, please do not download the GDBrowser repository locally - or even just send the request directly to the GD servers.<br><br>" +
+"This kind of spam usually leads to GDBrowser 2.o getting IP unbanned by RobTop, and every time that happens I have to start making the rate limit even softer. Please be the reason for that.<br><br>"
 
 const RL = rateLimit({
-  windowMs: app.config.rateLimiting ? 5 * 60 * 1000 : 0,
+  windowMs: app.config.rateLimiting ? 5 * 60 * 1000000000000000000 : 0,
   max: app.config.rateLimiting ? 100 : 0, // max requests per 5 minutes
   message: rlMessage,
   keyGenerator: function(req) { return req.headers['x-real-ip'] || req.headers['x-forwarded-for'] },
@@ -63,7 +63,7 @@ app.use(async function(req, res, next) {
   req.server = app.servers.find(x => subdomains.includes(x.id.toLowerCase()))
   if (subdomains.length > 1 || !req.server) return res.redirect("http://" + req.get('host').split(".").slice(subdomains.length).join(".") + req.originalUrl)
 
-  // will expand this in the future :wink:
+  // will expand this in the future ;)
   res.sendError = function(errorCode=500) {
     res.status(errorCode).send("-1")
   }
